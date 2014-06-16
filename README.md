@@ -38,7 +38,7 @@ In addition, I have not included the IAPS images used in the actual task. You mu
 
 ## Usage
 
-Example: `/Applications/Adobe\ Flex\ SDK/bin/mxmlc -static-link-runtime-shared-libraries=true -tools-locale=en_US -library-path+=~/ScriptingRT/scriptingrt0352.swc sexualityiat.mxml
+Example: `/Applications/Adobe\ Flex\ SDK/bin/mxmlc -static-link-runtime-shared-libraries=true -tools-locale=en_US -library-path+=~/ScriptingRT/scriptingrt0352.swc sexualityiat.mxml`
 
 ## Additional Information
 
