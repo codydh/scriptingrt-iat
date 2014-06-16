@@ -1,0 +1,1824 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Application
+    xmlns="org.nad.dm.*"
+    xmlns:gfx="org.nad.dm.gfx.*"
+    xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:mx="library://ns.adobe.com/flex/mx"
+    backgroundColor="0x999999" layout="absolute"
+    width="100%" height="100%"
+    frameRate="100"
+    outputURL="http://domain.com/scriptingrt.php?test=sexualityiat&amp;version=0.1&amp;type=csv.append"
+    protocolFormatHead="{subjectid};%serverUploadTime%,%clientUploadTime%,%clientIP%"
+    protocolFormatItem="{subjectid},%itemID%,%frameID%,%response%,%responseTime%"
+    finishedButtonValue="It is now safe to close this window."
+    creationComplete="initVars()"
+    debug="false">
+    
+    <fx:Script source="helper.actionscript" />
+    
+    <fx:Script>
+        
+        
+        <![CDATA[
+            /* Include my custom files */
+            
+            import mx.core.FlexGlobals;
+            
+            /* Declare bindable properties in Application scope.*/
+            /* Note: all variable names are case-sensitive. */
+            
+            [Bindable]
+            public var subjectid:String;
+            
+            private function initVars():void {
+                subjectid = FlexGlobals.topLevelApplication.parameters.subjectid;
+            }
+            
+            var fixationDelay:int = 17;
+            
+            public var cat1:String = "Male";
+            public var cat2:String = "Female";
+            public var cat3:String = "Sexually Attractive";
+            public var cat4:String = "Sexually Unattractive";
+            
+        ]]>
+        
+    </fx:Script>
+    
+	<WelcomeScreen id="welcome" Title="scriptingRT demo" titleTop="320" titleAlignment="center" titleColor="0x000000" backgroundColor="0xffffff" Logo="http://upload.wikimedia.org/wikipedia/en/thumb/7/76/University_of_Rochester_logo.svg/250px-University_of_Rochester_logo.svg.png" logoTop="20" logoAlignment="center"/>
+    
+	<Part response="keyboard.space.release" backgroundColor="black" color="0xFFFFFF">
+		<Instruction id="InstructionPage">
+			<instruction>
+At the top of the screen you will see two categories.
+One category will appear on the top left side of the screen and the other will appear on the top right side of the screen.
+
+A word will show up in the center of the screen.  Your task is to decide which category the word belongs in.
+If the word belongs in the category that appears on the top left side of the screen then you hit the 'Q' key.
+If the word belongs in the category that appears on the top right side of the screen then you hit the 'P' key.
+
+NOTE: You should try to make the decision about each word as fast as you can without making an error.
+If you do make an error, a red X will appear on the screen and you have to correct your response to move on to the next word.
+
+First, we are going to have you do some practice trials just so you can get the hang of it. When you are ready, press the space key to begin.
+			</instruction>
+		</Instruction>
+	</Part>
+    
+    <!-- Block One: Male vs. Female, 20 Trials -->
+    
+    <Part response="keyboard.space.release" id="Part1">
+		<Instruction id="InstructionPage1" name="Instruction Page" show="toggleVis(InstructionPage1, 1)" backgroundColor="black" color="0xFFFFFF" fontSize="30">
+			<instruction>
+First, we are going to have you do some practice trials.
+When you are ready, press the space key to begin.
+			</instruction>
+		</Instruction>
+	</Part>
+    
+	<TestPart id="Block1" scramble="1" positive="keyboard.P.press" negative="keyboard.Q.press" response="Time.5000" backgroundColor="black" color="0xFFFFFF" fontSize="30">
+        
+		<repeat>
+			<Feedback id="Feedback1" backgroundColor="black" response="Time.500" >
+				<incorrect>
+					<mx:Text verticalCenter="200" horizontalCenter="0" color="red" text="X"/>
+				</incorrect>
+			</Feedback>
+		</repeat>
+        
+        <Item type="-">
+            <Frame id="B1Male44601" show="toggleVis(B1Male44601, 1)">
+                <mx:Image source="@Embed('images/4460.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B1Male44602" show="toggleVis(B1Male44602, 1)">
+                <mx:Image source="@Embed('images/4460.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B1Male45001" show="toggleVis(B1Male45001, 1)">
+                <mx:Image source="@Embed('images/4500.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B1Male45002" show="toggleVis(B1Male45002, 1)">
+                <mx:Image source="@Embed('images/4500.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B1Male45341" show="toggleVis(B1Male45341, 1)">
+                <mx:Image source="@Embed('images/4534.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B1Male45342" show="toggleVis(B1Male45342, 1)">
+                <mx:Image source="@Embed('images/4534.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B1Male45501" show="toggleVis(B1Male45501, 1)">
+                <mx:Image source="@Embed('images/4550.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B1Male45502" show="toggleVis(B1Male45502, 1)">
+                <mx:Image source="@Embed('images/4550.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B1Male45611" show="toggleVis(B1Male45611, 1)">
+                <mx:Image source="@Embed('images/4561.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B1Male45612" show="toggleVis(B1Male45612, 1)">
+                <mx:Image source="@Embed('images/4561.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B1Female41411" show="toggleVis(B1Female41411, 1)">
+                <mx:Image source="@Embed('images/4141.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B1Female41412" show="toggleVis(B1Female41412, 1)">
+                <mx:Image source="@Embed('images/4141.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B1Female41421" show="toggleVis(B1Female41421, 1)">
+                <mx:Image source="@Embed('images/4142.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B1Female41422" show="toggleVis(B1Female41422, 1)">
+                <mx:Image source="@Embed('images/4142.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B1Female42101" show="toggleVis(B1Female42101, 1)">
+                <mx:Image source="@Embed('images/4210.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B1Female42102" show="toggleVis(B1Female42102, 1)">
+                <mx:Image source="@Embed('images/4210.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B1Female42321" show="toggleVis(B1Female42321, 1)">
+                <mx:Image source="@Embed('images/4232.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B1Female42322" show="toggleVis(B1Female42322, 1)">
+                <mx:Image source="@Embed('images/4232.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B1Female42401" show="toggleVis(B1Female42401, 1)">
+                <mx:Image source="@Embed('images/4240.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B1Female42402" show="toggleVis(B1Female42402, 1)">
+                <mx:Image source="@Embed('images/4240.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+
+	</TestPart>
+    
+    <!-- Block Two: Sexually Attractive vs. Sexually Unattractive, 20 Trials -->
+    
+    <Part response="keyboard.space.release" id="Part2">
+		<Instruction id="InstructionPage2" name="Instruction Page" show="toggleVis(InstructionPage2, 1)" backgroundColor="black" color="0xFFFFFF" fontSize="30">
+			<instruction>
+Please pay attention to the new categories.
+
+When you are ready, press the space key to begin.
+			</instruction>
+		</Instruction>
+	</Part>
+    
+    <TestPart id="Block2" scramble="1" positive="keyboard.P.press" negative="keyboard.Q.press" response="Time.5000" backgroundColor="black" color="0xFFFFFF" fontSize="30">
+        <repeat>
+			<Feedback id="Feedback2" backgroundColor="black" response="Time.500" >
+				<incorrect>
+					<mx:Text verticalCenter="200" horizontalCenter="0" color="red" text="X"/>
+				</incorrect>
+			</Feedback>
+		</repeat>
+        
+        	<Item type="-">
+			<Frame id="B2Arousing1" show="toggleVis(B2Arousing1, 2)">
+				<mx:Text text="AROUSING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+        
+        	<Item type="-">
+			<Frame id="B2Arousing2" show="toggleVis(B2Arousing2, 2)">
+				<mx:Text text="AROUSING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B2Erotic1" show="toggleVis(B2Erotic1, 2)">
+				<mx:Text text="EROTIC" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B2Erotic2" show="toggleVis(B2Erotic2, 2)">
+				<mx:Text text="EROTIC" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B2Attractive1" show="toggleVis(B2Attractive1, 2)">
+				<mx:Text text="ATTRACTIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B2Attractive2" show="toggleVis(B2Attractive2, 2)">
+				<mx:Text text="ATTRACTIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B2Sensual1" show="toggleVis(B2Sensual1, 2)">
+				<mx:Text text="SENSUAL" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B2Sensual2" show="toggleVis(B2Sensual2, 2)">
+				<mx:Text text="SENSUAL" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+		
+        	<Item type="-">
+			<Frame id="B2Exciting1" show="toggleVis(B2Exciting1, 2)">
+				<mx:Text text="EXCITING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B2Exciting2" show="toggleVis(B2Exciting2, 2)">
+				<mx:Text text="EXCITING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B2Forbidding1" show="toggleVis(B2Forbidding1, 2)">
+				<mx:Text text="FORBIDDING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B2Forbidding2" show="toggleVis(B2Forbidding2, 2)">
+				<mx:Text text="FORBIDDING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B2Repulsive1" show="toggleVis(B2Repulsive1, 2)">
+				<mx:Text text="REPULSIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B2Repulsive2" show="toggleVis(B2Repulsive2, 2)">
+				<mx:Text text="REPULSIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B2Repelling1" show="toggleVis(B2Repelling1, 2)">
+				<mx:Text text="REPELLING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B2Repelling2" show="toggleVis(B2Repelling2, 2)">
+				<mx:Text text="REPELLING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B2Repugnant1" show="toggleVis(B2Repugnant1, 2)">
+				<mx:Text text="REPUGNANT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B2Repugnant2" show="toggleVis(B2Repugnant2, 2)">
+				<mx:Text text="REPUGNANT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B2Repellent1" show="toggleVis(B2Repellent1, 2)">
+				<mx:Text text="REPELLENT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B2Repellent2" show="toggleVis(B2Repellent2, 2)">
+				<mx:Text text="REPELLENT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+        
+    </TestPart>
+    
+    <!-- Block Three: Male/Sexually Attractive vs. Female/Sexually Unattractive, 20 Trials -->
+    
+    <Part response="keyboard.space.release" id="Part3">
+		<Instruction id="InstructionPage3" name="Instruction Page" show="toggleVis(InstructionPage3, 3)" backgroundColor="black" color="0xFFFFFF" fontSize="30">
+			<instruction>
+Please pay attention to the new categories.
+
+When you are ready, press the space key to begin.
+			</instruction>
+		</Instruction>
+	</Part>
+    
+    <TestPart id="Block3" scramble="1" positive="keyboard.P.press" negative="keyboard.Q.press" response="Time.5000" backgroundColor="black" color="0xFFFFFF" fontSize="30">
+        <repeat>
+			<Feedback id="Feedback3" backgroundColor="black" response="Time.500" >
+				<incorrect>
+					<mx:Text verticalCenter="200" horizontalCenter="0" color="red" text="X"/>
+				</incorrect>
+			</Feedback>
+		</repeat>
+        
+        	<Item type="-">
+			<Frame id="B3Arousing1" show="toggleVis(B3Arousing1, 3)">
+				<mx:Text text="AROUSING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B3Erotic1" show="toggleVis(B3Erotic1, 3)">
+				<mx:Text text="EROTIC" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B3Attractive1" show="toggleVis(B3Attractive1, 3)">
+				<mx:Text text="ATTRACTIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B3Sensual1" show="toggleVis(B3Sensual1, 3)">
+				<mx:Text text="SENSUAL" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+		
+        	<Item type="-">
+			<Frame id="B3Exciting1" show="toggleVis(B3Exciting1, 3)">
+				<mx:Text text="EXCITING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B3Forbidding1" show="toggleVis(B3Forbidding1, 3)">
+				<mx:Text text="FORBIDDING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B3Repulsive1" show="toggleVis(B3Repulsive1, 3)">
+				<mx:Text text="REPULSIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B3Repelling1" show="toggleVis(B3Repelling1, 3)">
+				<mx:Text text="REPELLING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B3Repugnant1" show="toggleVis(B3Repugnant1, 3)">
+				<mx:Text text="REPUGNANT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B3Repellent1" show="toggleVis(B3Repellent1, 3)">
+				<mx:Text text="REPELLENT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        <Item type="-">
+            <Frame id="B3Male44601" show="toggleVis(B3Male44601, 3)">
+                <mx:Image source="@Embed('images/4460.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B3Male45001" show="toggleVis(B3Male45001, 3)">
+                <mx:Image source="@Embed('images/4500.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+
+        
+        <Item type="-">
+            <Frame id="B3Male45341" show="toggleVis(B3Male45341, 3)">
+                <mx:Image source="@Embed('images/4534.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+
+        
+        <Item type="-">
+            <Frame id="B3Male45501" show="toggleVis(B3Male45501, 3)">
+                <mx:Image source="@Embed('images/4550.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+
+        
+        <Item type="-">
+            <Frame id="B3Male45611" show="toggleVis(B3Male45611, 3)">
+                <mx:Image source="@Embed('images/4561.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+
+        
+        <Item type="+">
+            <Frame id="B3Female41411" show="toggleVis(B3Female41411, 3)">
+                <mx:Image source="@Embed('images/4141.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+
+        
+        <Item type="+">
+            <Frame id="B3Female41421" show="toggleVis(B3Female41421, 3)">
+                <mx:Image source="@Embed('images/4142.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+
+        
+        <Item type="+">
+            <Frame id="B3Female42101" show="toggleVis(B3Female42101, 3)">
+                <mx:Image source="@Embed('images/4210.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B3Female42321" show="toggleVis(B3Female42321, 3)">
+                <mx:Image source="@Embed('images/4232.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B3Female42401" show="toggleVis(B3Female42401, 3)">
+                <mx:Image source="@Embed('images/4240.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+
+        
+    </TestPart>
+    
+    <!-- Block Four: Male/Sexually Attractive vs. Female/Sexually Unattractive, 80 Trials -->
+
+    <Part response="keyboard.space.release" id="Part4">
+		<Instruction id="InstructionPage4" name="Instruction Page" show="toggleVis(InstructionPage4, 4)" backgroundColor="black" color="0xFFFFFF" fontSize="30">
+			<instruction>
+Please pay attention to the new categories.
+
+When you are ready, press the space key to begin.
+			</instruction>
+		</Instruction>
+	</Part>
+    
+    <TestPart id="Block4" scramble="1" positive="keyboard.P.press" negative="keyboard.Q.press" response="Time.5000" backgroundColor="black" color="0xFFFFFF" fontSize="30">
+        <repeat>
+			<Feedback id="Feedback4" backgroundColor="black" response="Time.500" >
+				<incorrect>
+					<mx:Text verticalCenter="200" horizontalCenter="0" color="red" text="X"/>
+				</incorrect>
+			</Feedback>
+		</repeat>
+
+
+        <Item type="-">
+            <Frame id="B4Male44601" show="toggleVis(B4Male44601, 4)">
+                <mx:Image source="@Embed('images/4460.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B4Male44602" show="toggleVis(B4Male44602, 4)">
+                <mx:Image source="@Embed('images/4460.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B4Male45001" show="toggleVis(B4Male45001, 4)">
+                <mx:Image source="@Embed('images/4500.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B4Male45002" show="toggleVis(B4Male45002, 4)">
+                <mx:Image source="@Embed('images/4500.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B4Male45341" show="toggleVis(B4Male45341, 4)">
+                <mx:Image source="@Embed('images/4534.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B4Male45342" show="toggleVis(B4Male45342, 4)">
+                <mx:Image source="@Embed('images/4534.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B4Male45501" show="toggleVis(B4Male45501, 4)">
+                <mx:Image source="@Embed('images/4550.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B4Male45502" show="toggleVis(B4Male45502, 4)">
+                <mx:Image source="@Embed('images/4550.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B4Male45611" show="toggleVis(B4Male45611, 4)">
+                <mx:Image source="@Embed('images/4561.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B4Male45612" show="toggleVis(B4Male45612, 4)">
+                <mx:Image source="@Embed('images/4561.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B4Female41411" show="toggleVis(B4Female41411, 4)">
+                <mx:Image source="@Embed('images/4141.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B4Female41412" show="toggleVis(B4Female41412, 4)">
+                <mx:Image source="@Embed('images/4141.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B4Female41421" show="toggleVis(B4Female41421, 4)">
+                <mx:Image source="@Embed('images/4142.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B4Female41422" show="toggleVis(B4Female41422, 4)">
+                <mx:Image source="@Embed('images/4142.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B4Female42101" show="toggleVis(B4Female42101, 4)">
+                <mx:Image source="@Embed('images/4210.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B4Female42102" show="toggleVis(B4Female42102, 4)">
+                <mx:Image source="@Embed('images/4210.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B4Female42321" show="toggleVis(B4Female42321, 4)">
+                <mx:Image source="@Embed('images/4232.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B4Female42322" show="toggleVis(B4Female42322, 4)">
+                <mx:Image source="@Embed('images/4232.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B4Female42401" show="toggleVis(B4Female42401, 4)">
+                <mx:Image source="@Embed('images/4240.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B4Female42402" show="toggleVis(B4Female42402, 4)">
+                <mx:Image source="@Embed('images/4240.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+
+        <Item type="-">
+            <Frame id="B4Male44603" show="toggleVis(B4Male44603, 4)">
+                <mx:Image source="@Embed('images/4460.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B4Male44604" show="toggleVis(B4Male44604, 4)">
+                <mx:Image source="@Embed('images/4460.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B4Male45003" show="toggleVis(B4Male45003, 4)">
+                <mx:Image source="@Embed('images/4500.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B4Male45004" show="toggleVis(B4Male45004, 4)">
+                <mx:Image source="@Embed('images/4500.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B4Male45343" show="toggleVis(B4Male45343, 4)">
+                <mx:Image source="@Embed('images/4534.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B4Male45344" show="toggleVis(B4Male45344, 4)">
+                <mx:Image source="@Embed('images/4534.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B4Male45503" show="toggleVis(B4Male45503, 4)">
+                <mx:Image source="@Embed('images/4550.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B4Male45504" show="toggleVis(B4Male45504, 4)">
+                <mx:Image source="@Embed('images/4550.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B4Male45613" show="toggleVis(B4Male45613, 4)">
+                <mx:Image source="@Embed('images/4561.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B4Male45614" show="toggleVis(B4Male45614, 4)">
+                <mx:Image source="@Embed('images/4561.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B4Female41413" show="toggleVis(B4Female41413, 4)">
+                <mx:Image source="@Embed('images/4141.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B4Female41414" show="toggleVis(B4Female41414, 4)">
+                <mx:Image source="@Embed('images/4141.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B4Female41423" show="toggleVis(B4Female41423, 4)">
+                <mx:Image source="@Embed('images/4142.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B4Female41424" show="toggleVis(B4Female41424, 4)">
+                <mx:Image source="@Embed('images/4142.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B4Female42103" show="toggleVis(B4Female42103, 4)">
+                <mx:Image source="@Embed('images/4210.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B4Female42104" show="toggleVis(B4Female42104, 4)">
+                <mx:Image source="@Embed('images/4210.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B4Female42323" show="toggleVis(B4Female42323, 4)">
+                <mx:Image source="@Embed('images/4232.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B4Female42324" show="toggleVis(B4Female42324, 4)">
+                <mx:Image source="@Embed('images/4232.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B4Female42403" show="toggleVis(B4Female42403, 4)">
+                <mx:Image source="@Embed('images/4240.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B4Female42404" show="toggleVis(B4Female42404, 4)">
+                <mx:Image source="@Embed('images/4240.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+
+        	<Item type="-">
+			<Frame id="B4Arousing1" show="toggleVis(B4Arousing1, 4)">
+				<mx:Text text="AROUSING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+        
+        	<Item type="-">
+			<Frame id="B4Arousing2" show="toggleVis(B4Arousing2, 4)">
+				<mx:Text text="AROUSING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B4Erotic1" show="toggleVis(B4Erotic1, 4)">
+				<mx:Text text="EROTIC" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B4Erotic2" show="toggleVis(B4Erotic2, 4)">
+				<mx:Text text="EROTIC" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B4Attractive1" show="toggleVis(B4Attractive1, 4)">
+				<mx:Text text="ATTRACTIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B4Attractive2" show="toggleVis(B4Attractive2, 4)">
+				<mx:Text text="ATTRACTIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B4Sensual1" show="toggleVis(B4Sensual1, 4)">
+				<mx:Text text="SENSUAL" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B4Sensual2" show="toggleVis(B4Sensual2, 4)">
+				<mx:Text text="SENSUAL" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+		
+        	<Item type="-">
+			<Frame id="B4Exciting1" show="toggleVis(B4Exciting1, 4)">
+				<mx:Text text="EXCITING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B4Exciting2" show="toggleVis(B4Exciting2, 4)">
+				<mx:Text text="EXCITING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B4Forbidding1" show="toggleVis(B4Forbidding1, 4)">
+				<mx:Text text="FORBIDDING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B4Forbidding2" show="toggleVis(B4Forbidding2, 4)">
+				<mx:Text text="FORBIDDING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B4Repulsive1" show="toggleVis(B4Repulsive1, 4)">
+				<mx:Text text="REPULSIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B4Repulsive2" show="toggleVis(B4Repulsive2, 4)">
+				<mx:Text text="REPULSIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B4Repelling1" show="toggleVis(B4Repelling1, 4)">
+				<mx:Text text="REPELLING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B4Repelling2" show="toggleVis(B4Repelling2, 4)">
+				<mx:Text text="REPELLING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B4Repugnant1" show="toggleVis(B4Repugnant1, 4)">
+				<mx:Text text="REPUGNANT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B4Repugnant2" show="toggleVis(B4Repugnant2, 4)">
+				<mx:Text text="REPUGNANT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B4Repellent1" show="toggleVis(B4Repellent1, 4)">
+				<mx:Text text="REPELLENT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B4Repellent2" show="toggleVis(B4Repellent2, 4)">
+				<mx:Text text="REPELLENT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B4Arousing3" show="toggleVis(B4Arousing3, 4)">
+				<mx:Text text="AROUSING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+        
+        	<Item type="-">
+			<Frame id="B4Arousing4" show="toggleVis(B4Arousing4, 4)">
+				<mx:Text text="AROUSING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B4Erotic3" show="toggleVis(B4Erotic3, 4)">
+				<mx:Text text="EROTIC" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B4Erotic4" show="toggleVis(B4Erotic4, 4)">
+				<mx:Text text="EROTIC" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B4Attractive3" show="toggleVis(B4Attractive3, 4)">
+				<mx:Text text="ATTRACTIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B4Attractive4" show="toggleVis(B4Attractive4, 4)">
+				<mx:Text text="ATTRACTIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B4Sensual3" show="toggleVis(B4Sensual3, 4)">
+				<mx:Text text="SENSUAL" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B4Sensual4" show="toggleVis(B4Sensual4, 4)">
+				<mx:Text text="SENSUAL" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+		
+        	<Item type="-">
+			<Frame id="B4Exciting3" show="toggleVis(B4Exciting3, 4)">
+				<mx:Text text="EXCITING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B4Exciting4" show="toggleVis(B4Exciting4, 4)">
+				<mx:Text text="EXCITING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B4Forbidding3" show="toggleVis(B4Forbidding3, 4)">
+				<mx:Text text="FORBIDDING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B4Forbidding4" show="toggleVis(B4Forbidding4, 4)">
+				<mx:Text text="FORBIDDING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B4Repulsive3" show="toggleVis(B4Repulsive3, 4)">
+				<mx:Text text="REPULSIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B4Repulsive4" show="toggleVis(B4Repulsive4, 4)">
+				<mx:Text text="REPULSIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B4Repelling3" show="toggleVis(B4Repelling3, 4)">
+				<mx:Text text="REPELLING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B4Repelling4" show="toggleVis(B4Repelling4, 4)">
+				<mx:Text text="REPELLING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B4Repugnant3" show="toggleVis(B4Repugnant3, 4)">
+				<mx:Text text="REPUGNANT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B4Repugnant4" show="toggleVis(B4Repugnant4, 4)">
+				<mx:Text text="REPUGNANT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B4Repellent3" show="toggleVis(B4Repellent3, 4)">
+				<mx:Text text="REPELLENT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="+">
+			<Frame id="B4Repellent4" show="toggleVis(B4Repellent4, 4)">
+				<mx:Text text="REPELLENT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+</TestPart>
+
+    
+    <!-- Block Five: Female vs. Male, 20 Trials -->
+    
+    <Part response="keyboard.space.release" id="Part5">
+		<Instruction id="InstructionPage5" show="toggleVis(InstructionPage5, 5)" backgroundColor="black" color="0xFFFFFF" fontSize="30">
+			<instruction>
+Please pay attention to the new categories.
+
+When you are ready, press the space key to begin.
+			</instruction>
+		</Instruction>
+	</Part>
+    
+	<TestPart id="Block5" scramble="1" positive="keyboard.Q.press" negative="keyboard.P.press" response="Time.5000" backgroundColor="black" color="0xFFFFFF" fontSize="30">
+        
+		<repeat>
+			<Feedback id="Feedback5" backgroundColor="black" response="Time.500" >
+				<incorrect>
+					<mx:Text verticalCenter="200" horizontalCenter="0" color="red" text="X"/>
+				</incorrect>
+			</Feedback>
+		</repeat>
+        
+       <Item type="-">
+            <Frame id="B5Male44601" show="toggleVis(B5Male44601, 5)">
+                <mx:Image source="@Embed('images/4460.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B5Male44602" show="toggleVis(B5Male44602, 5)">
+                <mx:Image source="@Embed('images/4460.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B5Male45001" show="toggleVis(B5Male45001, 5)">
+                <mx:Image source="@Embed('images/4500.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B5Male45002" show="toggleVis(B5Male45002, 5)">
+                <mx:Image source="@Embed('images/4500.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B5Male45341" show="toggleVis(B5Male45341, 5)">
+                <mx:Image source="@Embed('images/4534.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B5Male45342" show="toggleVis(B5Male45342, 5)">
+                <mx:Image source="@Embed('images/4534.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B5Male45501" show="toggleVis(B5Male45501, 5)">
+                <mx:Image source="@Embed('images/4550.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B5Male45502" show="toggleVis(B5Male45502, 5)">
+                <mx:Image source="@Embed('images/4550.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B5Male45611" show="toggleVis(B5Male45611, 5)">
+                <mx:Image source="@Embed('images/4561.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B5Male45612" show="toggleVis(B5Male45612, 5)">
+                <mx:Image source="@Embed('images/4561.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B5Female41411" show="toggleVis(B5Female41411, 5)">
+                <mx:Image source="@Embed('images/4141.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B5Female41412" show="toggleVis(B5Female41412, 5)">
+                <mx:Image source="@Embed('images/4141.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B5Female41421" show="toggleVis(B5Female41421, 5)">
+                <mx:Image source="@Embed('images/4142.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B5Female41422" show="toggleVis(B5Female41422, 5)">
+                <mx:Image source="@Embed('images/4142.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B5Female42101" show="toggleVis(B5Female42101, 5)">
+                <mx:Image source="@Embed('images/4210.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B5Female42102" show="toggleVis(B5Female42102, 5)">
+                <mx:Image source="@Embed('images/4210.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B5Female42321" show="toggleVis(B5Female42321, 5)">
+                <mx:Image source="@Embed('images/4232.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B5Female42322" show="toggleVis(B5Female42322, 5)">
+                <mx:Image source="@Embed('images/4232.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B5Female42401" show="toggleVis(B5Female42401, 5)">
+                <mx:Image source="@Embed('images/4240.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B5Female42402" show="toggleVis(B5Female42402, 5)">
+                <mx:Image source="@Embed('images/4240.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+
+		
+	</TestPart>
+    
+    <!-- Block Six: Female/Sexually Attractive vs. Male/Sexually Unattractive, 20 Trials -->
+
+    <Part response="keyboard.space.release" id="Part6">
+		<Instruction id="InstructionPage6" name="Instruction Page" show="toggleVis(InstructionPage6, 6)" backgroundColor="black" color="0xFFFFFF" fontSize="30">
+			<instruction>
+Please pay attention to the new categories.
+
+When you are ready, press the space key to begin.
+			</instruction>
+		</Instruction>
+	</Part>
+    
+    <TestPart id="Block6" scramble="1" positive="keyboard.Q.press" negative="keyboard.P.press" response="Time.5000" backgroundColor="black" color="0xFFFFFF" fontSize="30">
+        <repeat>
+			<Feedback id="Feedback6" backgroundColor="black" response="Time.500" >
+				<incorrect>
+					<mx:Text verticalCenter="200" horizontalCenter="0" color="red" text="X"/>
+				</incorrect>
+			</Feedback>
+		</repeat>
+        
+        	<Item type="+">
+			<Frame id="B6Arousing1" show="toggleVis(B6Arousing1, 6)">
+				<mx:Text text="AROUSING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B6Erotic1" show="toggleVis(B6Erotic1, 6)">
+				<mx:Text text="EROTIC" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B6Attractive1" show="toggleVis(B6Attractive1, 6)">
+				<mx:Text text="ATTRACTIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B6Sensual1" show="toggleVis(B6Sensual1, 6)">
+				<mx:Text text="SENSUAL" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+		
+        	<Item type="+">
+			<Frame id="B6Exciting1" show="toggleVis(B6Exciting1, 6)">
+				<mx:Text text="EXCITING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B6Forbidding1" show="toggleVis(B6Forbidding1, 6)">
+				<mx:Text text="FORBIDDING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="-">
+			<Frame id="B6Repulsive1" show="toggleVis(B6Repulsive1, 6)">
+				<mx:Text text="REPULSIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="-">
+			<Frame id="B6Repelling1" show="toggleVis(B6Repelling1, 6)">
+				<mx:Text text="REPELLING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="-">
+			<Frame id="B6Repugnant1" show="toggleVis(B6Repugnant1, 6)">
+				<mx:Text text="REPUGNANT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="-">
+			<Frame id="B6Repellent1" show="toggleVis(B6Repellent1, 6)">
+				<mx:Text text="REPELLENT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        <Item type="-">
+            <Frame id="B6Male44601" show="toggleVis(B6Male44601, 6)">
+                <mx:Image source="@Embed('images/4460.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B6Male45001" show="toggleVis(B6Male45001, 6)">
+                <mx:Image source="@Embed('images/4500.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+
+        
+        <Item type="-">
+            <Frame id="B6Male45341" show="toggleVis(B6Male45341, 6)">
+                <mx:Image source="@Embed('images/4534.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+
+        
+        <Item type="-">
+            <Frame id="B6Male45501" show="toggleVis(B6Male45501, 6)">
+                <mx:Image source="@Embed('images/4550.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+
+        
+        <Item type="-">
+            <Frame id="B6Male45611" show="toggleVis(B6Male45611, 6)">
+                <mx:Image source="@Embed('images/4561.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+
+        
+        <Item type="+">
+            <Frame id="B6Female41411" show="toggleVis(B6Female41411, 6)">
+                <mx:Image source="@Embed('images/4141.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+
+        
+        <Item type="+">
+            <Frame id="B6Female41421" show="toggleVis(B6Female41421, 6)">
+                <mx:Image source="@Embed('images/4142.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+
+        
+        <Item type="+">
+            <Frame id="B6Female42101" show="toggleVis(B6Female42101, 6)">
+                <mx:Image source="@Embed('images/4210.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B6Female42321" show="toggleVis(B6Female42321, 6)">
+                <mx:Image source="@Embed('images/4232.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B6Female42401" show="toggleVis(B6Female42401, 6)">
+                <mx:Image source="@Embed('images/4240.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+
+        
+    </TestPart>
+    
+    <!-- Block Seven: Female/Sexually Attractive vs. Male/Sexually Unattractive, 80 Trials -->
+
+    <Part response="keyboard.space.release" id="Part7">
+		<Instruction id="InstructionPage7" name="Instruction Page" show="toggleVis(InstructionPage7, 7)" backgroundColor="black" color="0xFFFFFF" fontSize="30">
+			<instruction>
+Please pay attention to the new categories.
+
+When you are ready, press the space key to begin.
+			</instruction>
+		</Instruction>
+	</Part>
+    
+    <TestPart id="Block7" scramble="1" positive="keyboard.Q.press" negative="keyboard.P.press" response="Time.5000" backgroundColor="black" color="0xFFFFFF" fontSize="30">
+        <repeat>
+			<Feedback id="Feedback7" backgroundColor="black" response="Time.500" >
+				<incorrect>
+					<mx:Text verticalCenter="200" horizontalCenter="0" color="red" text="X"/>
+				</incorrect>
+			</Feedback>
+		</repeat>
+
+
+        <Item type="-">
+            <Frame id="B7Male44601" show="toggleVis(B7Male44601, 7)">
+                <mx:Image source="@Embed('images/4460.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B7Male44602" show="toggleVis(B7Male44602, 7)">
+                <mx:Image source="@Embed('images/4460.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B7Male45001" show="toggleVis(B7Male45001, 7)">
+                <mx:Image source="@Embed('images/4500.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B7Male45002" show="toggleVis(B7Male45002, 7)">
+                <mx:Image source="@Embed('images/4500.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B7Male45341" show="toggleVis(B7Male45341, 7)">
+                <mx:Image source="@Embed('images/4534.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B7Male45342" show="toggleVis(B7Male45342, 7)">
+                <mx:Image source="@Embed('images/4534.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B7Male45501" show="toggleVis(B7Male45501, 7)">
+                <mx:Image source="@Embed('images/4550.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B7Male45502" show="toggleVis(B7Male45502, 7)">
+                <mx:Image source="@Embed('images/4550.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B7Male45611" show="toggleVis(B7Male45611, 7)">
+                <mx:Image source="@Embed('images/4561.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B7Male45612" show="toggleVis(B7Male45612, 7)">
+                <mx:Image source="@Embed('images/4561.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B7Female41411" show="toggleVis(B7Female41411, 7)">
+                <mx:Image source="@Embed('images/4141.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B7Female41412" show="toggleVis(B7Female41412, 7)">
+                <mx:Image source="@Embed('images/4141.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B7Female41421" show="toggleVis(B7Female41421, 7)">
+                <mx:Image source="@Embed('images/4142.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B7Female41422" show="toggleVis(B7Female41422, 7)">
+                <mx:Image source="@Embed('images/4142.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B7Female42101" show="toggleVis(B7Female42101, 7)">
+                <mx:Image source="@Embed('images/4210.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B7Female42102" show="toggleVis(B7Female42102, 7)">
+                <mx:Image source="@Embed('images/4210.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B7Female42321" show="toggleVis(B7Female42321, 7)">
+                <mx:Image source="@Embed('images/4232.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B7Female42322" show="toggleVis(B7Female42322, 7)">
+                <mx:Image source="@Embed('images/4232.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B7Female42401" show="toggleVis(B7Female42401, 7)">
+                <mx:Image source="@Embed('images/4240.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B7Female42402" show="toggleVis(B7Female42402, 7)">
+                <mx:Image source="@Embed('images/4240.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+
+        <Item type="-">
+            <Frame id="B7Male44603" show="toggleVis(B7Male44603, 7)">
+                <mx:Image source="@Embed('images/4460.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B7Male44604" show="toggleVis(B7Male44604, 7)">
+                <mx:Image source="@Embed('images/4460.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B7Male45003" show="toggleVis(B7Male45003, 7)">
+                <mx:Image source="@Embed('images/4500.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B7Male45004" show="toggleVis(B7Male45004, 7)">
+                <mx:Image source="@Embed('images/4500.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B7Male45343" show="toggleVis(B7Male45343, 7)">
+                <mx:Image source="@Embed('images/4534.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B7Male45344" show="toggleVis(B7Male45344, 7)">
+                <mx:Image source="@Embed('images/4534.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B7Male45503" show="toggleVis(B7Male45503, 7)">
+                <mx:Image source="@Embed('images/4550.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B7Male45504" show="toggleVis(B7Male45504, 7)">
+                <mx:Image source="@Embed('images/4550.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B7Male45613" show="toggleVis(B7Male45613, 7)">
+                <mx:Image source="@Embed('images/4561.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="-">
+            <Frame id="B7Male45614" show="toggleVis(B7Male45614, 7)">
+                <mx:Image source="@Embed('images/4561.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B7Female41413" show="toggleVis(B7Female41413, 7)">
+                <mx:Image source="@Embed('images/4141.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B7Female41414" show="toggleVis(B7Female41414, 7)">
+                <mx:Image source="@Embed('images/4141.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B7Female41423" show="toggleVis(B7Female41423, 7)">
+                <mx:Image source="@Embed('images/4142.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B7Female41424" show="toggleVis(B7Female41424, 7)">
+                <mx:Image source="@Embed('images/4142.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B7Female42103" show="toggleVis(B7Female42103, 7)">
+                <mx:Image source="@Embed('images/4210.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B7Female42104" show="toggleVis(B7Female42104, 7)">
+                <mx:Image source="@Embed('images/4210.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B7Female42323" show="toggleVis(B7Female42323, 7)">
+                <mx:Image source="@Embed('images/4232.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B7Female42324" show="toggleVis(B7Female42324, 7)">
+                <mx:Image source="@Embed('images/4232.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B7Female42403" show="toggleVis(B7Female42403, 7)">
+                <mx:Image source="@Embed('images/4240.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+        
+        <Item type="+">
+            <Frame id="B7Female42404" show="toggleVis(B7Female42404, 7)">
+                <mx:Image source="@Embed('images/4240.jpg')" horizontalCenter="0" verticalCenter="0" />
+            </Frame>
+        </Item>
+
+        	<Item type="+">
+			<Frame id="B7Arousing1" show="toggleVis(B7Arousing1, 7)">
+				<mx:Text text="AROUSING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+        
+        	<Item type="+">
+			<Frame id="B7Arousing2" show="toggleVis(B7Arousing2, 7)">
+				<mx:Text text="AROUSING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B7Erotic1" show="toggleVis(B7Erotic1, 7)">
+				<mx:Text text="EROTIC" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B7Erotic2" show="toggleVis(B7Erotic2, 7)">
+				<mx:Text text="EROTIC" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B7Attractive1" show="toggleVis(B7Attractive1, 7)">
+				<mx:Text text="ATTRACTIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B7Attractive2" show="toggleVis(B7Attractive2, 7)">
+				<mx:Text text="ATTRACTIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B7Sensual1" show="toggleVis(B7Sensual1, 7)">
+				<mx:Text text="SENSUAL" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B7Sensual2" show="toggleVis(B7Sensual2, 7)">
+				<mx:Text text="SENSUAL" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+		
+        	<Item type="+">
+			<Frame id="B7Exciting1" show="toggleVis(B7Exciting1, 7)">
+				<mx:Text text="EXCITING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B7Exciting2" show="toggleVis(B7Exciting2, 7)">
+				<mx:Text text="EXCITING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B7Forbidding1" show="toggleVis(B7Forbidding1, 7)">
+				<mx:Text text="FORBIDDING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B7Forbidding2" show="toggleVis(B7Forbidding2, 7)">
+				<mx:Text text="FORBIDDING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="-">
+			<Frame id="B7Repulsive1" show="toggleVis(B7Repulsive1, 7)">
+				<mx:Text text="REPULSIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="-">
+			<Frame id="B7Repulsive2" show="toggleVis(B7Repulsive2, 7)">
+				<mx:Text text="REPULSIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="-">
+			<Frame id="B7Repelling1" show="toggleVis(B7Repelling1, 7)">
+				<mx:Text text="REPELLING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="-">
+			<Frame id="B7Repelling2" show="toggleVis(B7Repelling2, 7)">
+				<mx:Text text="REPELLING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="-">
+			<Frame id="B7Repugnant1" show="toggleVis(B7Repugnant1, 7)">
+				<mx:Text text="REPUGNANT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="-">
+			<Frame id="B7Repugnant2" show="toggleVis(B7Repugnant2, 7)">
+				<mx:Text text="REPUGNANT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="-">
+			<Frame id="B7Repellent1" show="toggleVis(B7Repellent1, 7)">
+				<mx:Text text="REPELLENT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="-">
+			<Frame id="B7Repellent2" show="toggleVis(B7Repellent2, 7)">
+				<mx:Text text="REPELLENT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B7Arousing3" show="toggleVis(B7Arousing3, 7)">
+				<mx:Text text="AROUSING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+        
+        	<Item type="+">
+			<Frame id="B7Arousing4" show="toggleVis(B7Arousing4, 7)">
+				<mx:Text text="AROUSING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B7Erotic3" show="toggleVis(B7Erotic3, 7)">
+				<mx:Text text="EROTIC" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B7Erotic4" show="toggleVis(B7Erotic4, 7)">
+				<mx:Text text="EROTIC" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B7Attractive3" show="toggleVis(B7Attractive3, 7)">
+				<mx:Text text="ATTRACTIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B7Attractive4" show="toggleVis(B7Attractive4, 7)">
+				<mx:Text text="ATTRACTIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B7Sensual3" show="toggleVis(B7Sensual3, 7)">
+				<mx:Text text="SENSUAL" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B7Sensual4" show="toggleVis(B7Sensual4, 7)">
+				<mx:Text text="SENSUAL" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+		
+        	<Item type="+">
+			<Frame id="B7Exciting3" show="toggleVis(B7Exciting3, 7)">
+				<mx:Text text="EXCITING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="+">
+			<Frame id="B7Exciting4" show="toggleVis(B7Exciting4, 7)">
+				<mx:Text text="EXCITING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B7Forbidding3" show="toggleVis(B7Forbidding3, 7)">
+				<mx:Text text="FORBIDDING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+        	<Item type="-">
+			<Frame id="B7Forbidding4" show="toggleVis(B7Forbidding4, 7)">
+				<mx:Text text="FORBIDDING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="-">
+			<Frame id="B7Repulsive3" show="toggleVis(B7Repulsive3, 7)">
+				<mx:Text text="REPULSIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="-">
+			<Frame id="B7Repulsive4" show="toggleVis(B7Repulsive4, 7)">
+				<mx:Text text="REPULSIVE" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="-">
+			<Frame id="B7Repelling3" show="toggleVis(B7Repelling3, 7)">
+				<mx:Text text="REPELLING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="-">
+			<Frame id="B7Repelling4" show="toggleVis(B7Repelling4, 7)">
+				<mx:Text text="REPELLING" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="-">
+			<Frame id="B7Repugnant3" show="toggleVis(B7Repugnant3, 7)">
+				<mx:Text text="REPUGNANT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="-">
+			<Frame id="B7Repugnant4" show="toggleVis(B7Repugnant4, 7)">
+				<mx:Text text="REPUGNANT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="-">
+			<Frame id="B7Repellent3" show="toggleVis(B7Repellent3, 7)">
+				<mx:Text text="REPELLENT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+		<Item type="-">
+			<Frame id="B7Repellent4" show="toggleVis(B7Repellent4, 7)">
+				<mx:Text text="REPELLENT" horizontalCenter="0" verticalCenter="0" />
+			</Frame>
+		</Item>
+
+</TestPart>
+    
+	<!-- Closing Instructions -->
+    
+	<Part id="endPart" response="keyboard.space.release" backgroundColor="black" color="0xFFFFFF">
+        
+		<Instruction id="endPage1">
+			<instruction>
+You are finished! Thank you!
+
+Please click OK until you see a message that it is safe to close this window.
+			</instruction>
+		</Instruction>
+	</Part>
+    
+</Application>

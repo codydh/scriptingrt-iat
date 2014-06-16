@@ -1,0 +1,128 @@
+
+
+private function toggleVis(name:Object, block:int):void {
+
+    var L1:Text = new Text();
+    L1.verticalCenter = -300;
+    L1.horizontalCenter = -300;
+    
+    var L2:Text = new Text();
+    L2.verticalCenter = -260;
+    L2.horizontalCenter = -300;
+    
+    var L3:Text = new Text();
+    L3.verticalCenter = -220;
+    L3.horizontalCenter = -300;
+    
+    var L4:Text = new Text();
+    L4.verticalCenter = -300;
+    L4.horizontalCenter = 300;
+    
+    var L5:Text = new Text();
+    L5.verticalCenter = -260;
+    L5.horizontalCenter = 300;
+    
+    var L6:Text = new Text();
+    L6.verticalCenter = -220;
+    L6.horizontalCenter = 300;
+    
+    /*L1.text=block;*/
+
+    switch (block) {
+        /* Block 1: Cat1 vs. Cat2 */
+        case 1 :
+            L1.htmlText = '<font color="#006400">' + cat1 + '</font>';
+            L2.text = "";
+            L3.text = "";
+            L4.htmlText = '<font color="#006400">' + cat2 + '</font>';
+            L5.text = "";
+            L6.text = "";
+            break;
+
+        /* Block 2: Cat3 vs. Cat4 */
+        case 2 :
+            L1.htmlText = "";
+            L2.text = "";
+            L3.text = cat3;
+            L4.htmlText = "";
+            L5.text = "";
+            L6.text = cat4;
+            break;
+
+        /* Block 3: Cat1/Cat3 vs. Cat2/Cat4 */
+        case 3 :
+            L1.htmlText = '<font color="#006400">' + cat1 + '</font>';
+            L2.text = "or";
+            L3.text = cat3;
+            L4.htmlText = '<font color="#006400">' + cat2 + '</font>';
+            L5.text = "or";
+            L6.text = cat4;
+            break;
+            
+        /* Block 4: Cat1/Cat3 vs. Cat2/Cat4 */
+        case 4 :
+            L1.htmlText = '<font color="#006400">' + cat1 + '</font>';
+            L2.text = "or";
+            L3.text = cat3;
+            L4.htmlText = '<font color="#006400">' + cat2 + '</font>';
+            L5.text = "or";
+            L6.text = cat4;
+            break;
+        
+        /* Block 5: Cat2 vs. Cat1 */
+        case 5 :
+            L1.htmlText = '<font color="#006400">' + cat2 + '</font>';
+            L2.text = "";
+            L3.text = "";
+            L4.htmlText = '<font color="#006400">' + cat1 + '</font>';
+            L5.text = "";
+            L6.text = "";
+            break;
+        /* Block 6: Cat2/Cat3 vs. Cat1/Cat4 */
+        case 6 :
+            L1.htmlText = '<font color="#006400">' + cat2 + '</font>';
+            L2.text = "or";
+            L3.text = cat3;
+            L4.htmlText = '<font color="#006400">' + cat1 + '</font>';
+            L5.text = "or";
+            L6.text = cat4;
+            break;
+
+        /* Block 7: Cat2/Cat3 vs. Cat1/Cat4 */
+        case 7 :
+            L1.htmlText = '<font color="#006400">' + cat2 + '</font>';
+            L2.text = "or";
+            L3.text = cat3;
+            L4.htmlText = '<font color="#006400">' + cat1 + '</font>';
+            L5.text = "or";
+            L6.text = cat4;
+            break;
+
+        default :
+            // nothing
+            break;
+    }
+    
+    name.addChild(L1);
+    name.addChild(L2);
+    name.addChild(L3);
+    name.addChild(L4);
+    name.addChild(L5);
+    name.addChild(L6);
+    
+    var fixation:Text = new Text();
+    fixation.verticalCenter = 0;
+    fixation.horizontalCenter = 0;
+    fixation.text = "+";
+    name.addChild(fixation);
+
+    name.getChildAt(0).visible = false; /* Stimulus */
+
+    setTimeout(showStim, fixationDelay);
+
+    function showStim():void{
+        name.getChildAt(7).visible = false; /* Fixation */
+        name.getChildAt(0).visible = true; /* Stimulus */
+    }
+
+}
